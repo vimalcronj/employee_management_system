@@ -24,11 +24,16 @@ loadDatabase();
 
 function validateHr()
 {
-	if(isSessionExist())
+	if(localStorage.getItem(CONFIG.SESSION))
 		redirectToSession();
 	else 
 		signOut();
 
+}
+
+window.onload=function(){
+	document.getElementById('user').innerHTML=session.user_id;
+	viewCurrentEmployees();
 }
 
 function loadDatabase()
@@ -45,13 +50,6 @@ function redirectToSession()
 		if(session.user_type!=CONFIG.USER_TYPE_HR)
 			window.location=session.user_type==CONFIG.USER_TYPE_EMPLOYEE ? CONFIG.EMPLOYEE_PAGE : signOut()
 }
-
-
-function isSessionExist()
-{
-	return (localStorage.getItem(CONFIG.SESSION)!=null && localStorage.getItem(CONFIG.SESSION)!=CONFIG.EMPTY_STRING);
-}
-
 
 
 function checkEmpty(error_id)
@@ -275,6 +273,7 @@ function searchEmp()
 	}
 	document.getElementById("current-employee-search-result").innerHTML="<small>No employee with the given user_id</small>";
 	document.getElementById("current-employee-search").style.display="block";
+	return false;
 
 
 }
@@ -310,29 +309,34 @@ function matches(for_match, with_match)
 	if(re.test(with_match))
 		return true;
 	return false;
-}
 
+}
 
 function clearAllFields(field)
 {
 	var fields=document.getElementsByTagName(field);
-	//console.log(fields);
-	/*if(field=='input')
+	if(field=='input')
 	{
-		console.log(fields);
-		for(var i=0;i<fields.length;i++);
+		for(var i=0;i<fields.length;i++)
 		{
-			//console.log(fields[i]);
-			if(fields[i].type=='text' || fields[i].type=='date')
-				fields[i].value==EMPTY_STRING;
+			
+			if(fields[i].type=='text' || fields[i].type=='date' || fields[i].type=='password')
+			{
+				fields[i].value="";
+			}
 		}
 		return false;
 	}
 	else
 	{
-		for(var i=0;i<fields.length;i++);
-			fields[i].innerHTML==EMPTY_STRING;
+		for(var i=0;i<fields.length;i++)
+			fields[i].innerHTML=CONFIG.EMPTY_STRING;
 		return false;
-	}*/
+	}
+
+}
+
+function searchEmpDynamically()
+{
 
 }

@@ -69,6 +69,7 @@ function isSessionExist()
 
 window.onload=function()
 {
+	document.getElementById('user').innerHTML=session.user_id;
 	for(var i=0;i<empauth.length;i++)
 	{
 		if(empauth[i].user_id==session.user_id)

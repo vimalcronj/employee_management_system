@@ -13,7 +13,7 @@
 
 		<div id="welcome" >
 			    	
-			    		<h2>Welcome <p id="hr"></p></h2>
+			    		<h2>Welcome <span id="user"></span></h2>
 			    		
 			    			
 			    	
@@ -40,8 +40,9 @@
 				<div id="current-employee-search" class="hr-options">
 			    	<h2>search here</h2>
 			    		<form onsubmit="return searchEmp()" autocomplete="off">
-			    		<input type="text" id="current-employee-search-user_id" class="current-employee-search current-employee-search-user_id" placeholder="keyword" onblur="checkEmpty('current-employee-search-user_id');"/><small class="current-employee-search-user_id-error"></small>
-			    		<input type="button" value="Search" onclick="searchEmp()"/><small id="current-employee-search-error"></small>
+			    		<input type="text" id="current-employee-search-user_id"  class="current-employee-search current-employee-search-user_id" onkeyup= "searchEmp();" placeholder="keyword" onblur="checkEmpty('current-employee-search-user_id');"/><small class="current-employee-search-user_id-error"></small>
+			    		<!--<input type="button" value="Search" onclick="searchEmp()"/>-->
+			    		<small id="current-employee-search-error"></small>
 			    		
 
 			    		<center><div id="current-employee-search-result"></div></center>
@@ -60,7 +61,7 @@
 			    <div id="registration" class="hr-options">
 			    	<form onsubmit="return registration();" autocomplete="off">
 				    	<h2>Enter the details of new Employee</h2>
-				    	<label> <input type="text"  id="registration-name" placeholder="Name" class="registration registration-name" onblur="checkEmpty('registration-name')"/><small class="registration-name-error" ;"></small> </label>
+				    	<label> <input type="text"  id="registration-name" placeholder="Name" class="registration registration-name" onblur="checkEmpty('registration-name')"/><small class="registration-name-error"></small> </label>
 				    	
 				    	<label><input type="text" placeholder="username" id="registration-user_id" class='registration registration-user_id' onblur="checkEmpty('registration-user_id');"/><small class="registration-user_id-error" ></small></label>
 				    	

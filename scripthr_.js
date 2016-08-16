@@ -24,7 +24,7 @@ loadDatabase();
 
 function validateHr()
 {
-	if(isSessionExist())
+	if(localStorage.session)
 		redirectToSession();
 	else 
 		signOut();
@@ -334,4 +334,4 @@ function clearAllFields(field)
 		return false;
 	}*/
 
-}
+}	

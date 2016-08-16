@@ -99,9 +99,11 @@ nav span
 {
 	display:inline-block;
 	padding-left: 2%;
+	padding-right:2%;
 	cursor: pointer;
 }
 form
 {
 	autocomplete:"off";
 }
+
