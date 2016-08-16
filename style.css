@@ -1,0 +1,107 @@
+header h1
+{
+	color:blue;
+	text-align: center;
+	background-color: silver;
+
+}
+form
+{
+
+	text-align: center;
+
+}
+label
+{
+	margin-bottom: 50px;
+	display: block
+	position: relative;
+
+}
+small
+{
+	display:block;
+	color:red;
+}
+
+input
+{
+	text-align: center;
+	display: inline;
+}
+
+#current-employees
+{
+	display:none;
+}
+
+#remark
+{
+	display :none;
+}
+#registration
+{
+	display:none;
+}
+
+#current-employees-list
+{
+
+	text-align: center;
+	table-layout:fixed;
+	margin: 0 auto;
+
+}
+
+#current-employee-search
+{
+	display:none;
+}
+
+#sign_out-button
+{
+	float: right;
+}
+ul li
+{
+	position:relative;
+	padding-left:20px;
+	display:inline;
+
+}
+
+ul
+{
+	margin:100;
+}
+
+span
+{
+
+	display:inline-block;
+}
+
+input[type=text]
+{
+	autocomplete
+}
+
+nav
+{
+
+	background-color:grey;
+	font-size: 25px;
+	empty-cells:  hide;
+	text-align: left;
+}
+
+nav span
+{
+	display:inline-block;
+	padding-left: 2%;
+	cursor: pointer;
+}
+form
+{
+	autocomplete:"off";
+}

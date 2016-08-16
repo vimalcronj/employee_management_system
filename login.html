@@ -1,0 +1,25 @@
+<html>
+	<head>
+        <title>Employee Management System</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+	</head>
+	<body><center>
+        <header>
+            <h1>Employee Management System</h1>
+        </header>
+		<div id="login" onsubmit="return loginValidate();">
+    	<form id="login-form" autocomplete="off">
+    		
+    			
+    			<input type="text" id="login-userid"  placeholder="userid"class="login login-userid" onblur="checkEmpty('login-userid')"/>
+    		<small class="login-userid-error"></small>
+    		
+    			<input type="password" id="login-password" placeholder="password"class="login login-password" onblur="checkEmpty('login-password');"/>
+    		<small class="login-password-error"></small>
+    		<input type="submit" value="LOGIN" id="login-login" />
+    		<small id="login-error"></small>
+    	</form>
+	    </div></center>
+	</body>
+</html>

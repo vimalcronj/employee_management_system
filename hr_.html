@@ -1,0 +1,80 @@
+		<html>
+		<head>
+			<title>Employee Management System</title>
+	        <link rel="stylesheet" type="text/css" href="style.css">
+			<script src="scripthr.js"></script>
+		</head>
+		<body><center>
+		<!--HEADER-->
+			<header>
+	            <h1>Employee Management System</h1>
+	        </header>
+	    <!--WELCOMe-->
+
+		<div id="welcome" >
+			    	
+			    		<h2>Welcome <p id="hr"></p></h2>
+			    		
+			    			
+			    	
+			    </div>
+
+		<!--OPTIONS FOR HR-->
+
+			    <nav>
+			    <ul>
+			    	<li><button id="registration-button" class="hr-options-button" type="button" value="Register new" onclick="viewRegistrationForm();">registration</button></li>
+			    	<li><button onclick="viewCurrentEmployees(); " id="current_employees-button" class="hr-options-button">current Employees</button></li>
+			    	<li><button onclick="viewRemark()" id="remark-button" class="hr-options-button">remarks</button></li>
+			    	<li><button onclick="signOut();" id="sign_out-button" class="hr-options-button">Signout</button></li>
+			    </ul>
+			    </nav>
+			    
+		<!--LIST OF CURRENT EMPLOYEES-->
+				<div id="current-employee-search" class="hr-options">
+			    	<h2>search here</h2>
+			    		<form onsubmit="return searchEmp()">
+			    		<input type="text" id="current-employee-search-user_id" class="current-employee-search current-employee-search-user_id" placeholder="keyword" onblur="checkEmpty('current-employee-search-user_id');"/><small class="current-employee-search-user_id-error"></small>
+			    		<input type="button" value="Search" onclick="searchEmp()"/><small id="current-employee-search-error"></small>
+			    		
+
+			    		<center><div id="current-employee-search-result"></div></center>
+			    		
+			    		</form>
+			    </div>
+
+			    <div id="current-employees" class="hr-options">
+			    		
+			    		
+			    </div>
+			    
+
+		<!--FORM FOR ADDING NEW EMPLOYEE -->
+
+			    <div id="registration" class="hr-options">
+			    	<form onsubmit="return registration();">
+				    	<h2>Enter the details of new Employee</h2>
+				    	<label> <input type="text" id="registration-name" placeholder="Name" class="registration registration-name" onblur="checkEmpty('registration-name')"/><small class="registration-name-error" ;"></small> </label>
+				    	
+				    	<label><input type="text" placeholder="username" id="registration-user_id" class='registration registration-user_id' onblur="checkEmpty('registration-user_id');"/><small class="registration-user_id-error" ></small></label>
+				    	
+				    	<label><input type="date" placeholder="date of joining" class="registration registration-doj" id="registration-doj" onblur="checkEmpty('registration-doj');"/><small class="registration-doj-error" ></small></label>
+				    	
+				    	<label><input type="text" id="registration-remark" placeholder="Remark" class="registration registration-remark" onblur="checkEmpty('registration-remark');"/><small class="registration-remark-error" ></small></label>
+
+				    	<label><input type="password" id="registration-password" placeholder="password" class="registration registration-password" onblur="checkEmpty('registration-password');"/><small class="registration-password-error"></small></label>
+				    	
+				    	<input type="submit"  value="REGISTER" /><small id="registration-error"></small>
+			    	</form>
+			    </div>
+	<!--REMARK-->
+			<div id="remark" class="hr-options">
+				<h2>want to put REMARKS for employees</h2>
+				<label> 
+					<input type="text" placeholder="user-ID of the employee" id="remark-user_id" class="remark remark-user_id" onblur="checkEmpty('remark-user_id');" /><small class="remark-user_id-error"></small></label>
+				<label><textarea placeholder="remark" id="remark-remark" class="remark remark-remark" onblur="checkEmpty('remark-remark');"></textarea><small class="remark-remark-error"></small></label>
+				<input type="button" value="submit" onclick="remark()"/><small id="remark-error"></small>
+			</div></center>
+
+		</body>
+		</html>

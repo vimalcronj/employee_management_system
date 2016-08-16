@@ -1,0 +1,11 @@
+const USER_TYPE_HR="hr";
+const USER_TYPE_EMPLOYEE="employee";
+const HR_PAGE="hr.html";
+const EMPLOYEE_PAGE="employee.html";
+const CREDENTIAL_NOT_MATCHES="user id or password doesn't match";
+const ALL_EMPTY_FIELD_MSG="PLEASE FILL ALL FIELDS !!!";
+const EMPTY_FIELD_MSG="Please fill this field";
+const ERROR_ID="-error";
+const EMPTY_STRING="";
+const HR_AUTH = "hrauth";
+const DEFAULT_USER = [{user_id:"vimal",password:"negi"},{user_id:"hr",password:"cronj"}];
