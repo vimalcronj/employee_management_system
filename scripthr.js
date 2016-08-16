@@ -340,7 +340,7 @@ function isValueValid(value,valueType)
 	switch(valueType)
 	{
 	case 'name':
-		if(matches("[a-z]{3,}",value,'i') && !matches("[0-9]",value) && !matches("[' ']{3,}",value))
+		if(matches("[a-z]{3,}",value,'i') && !matches("[0-9]",value) && !matches("[' ']{2,}",value) && )
 			return true;
 		return false;
 	
