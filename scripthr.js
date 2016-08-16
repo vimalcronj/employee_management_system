@@ -284,17 +284,17 @@ function search(data)
 	var index_matched=[];
 	for(var i=0;i<empauth.length;i++)
 	{
-		if(matches(data,empauth[i].name))
+		if(matches(data,empauth[i].name,'i'))
 		{
 			index_matched[index_matched.length]=i;
 			continue;
 		}
-		if(matches(data,empauth[i].user_id))
+		if(matches(data,empauth[i].user_id,'i'))
 		{
 			index_matched[index_matched.length]=i;
 			continue;
 		}
-		if(matches(data,empauth[i].remark))
+		if(matches(data,empauth[i].remark,'i'))
 		{
 			index_matched[index_matched.length]=i;
 			continue;
@@ -303,9 +303,9 @@ function search(data)
 	return index_matched;
 }
 
-function matches(for_match, with_match)
+function matches(for_match, with_match,i)
 {
-	var re=new RegExp(for_match,"i");
+	var re=new RegExp(for_match,i);
 	if(re.test(with_match))
 		return true;
 	return false;
@@ -333,10 +333,26 @@ function clearAllFields(field)
 			fields[i].innerHTML=CONFIG.EMPTY_STRING;
 		return false;
 	}
-
 }
 
-function searchEmpDynamically()
+function isValueValid(value,valueType)
 {
+	switch(valueType)
+	{
+	case 'name':
+		if(matches("[a-z]{3,}",value,'i') && !matches("[0-9]",value) && !matches("[' ']{3,}",value))
+			return true;
+		return false;
+	
 
+	case 'password' :
+		console.log('matching password');
+		if(!matches("[\\s]",value,'i') && matches("[^A-Za-z0-9]",value,'i') && matches("[A-Z]{1,}",value) && matches("[0-9]",value))
+			return true;
+		return false;
+	
+
+	case 'userid':
+	
+	}
 }
