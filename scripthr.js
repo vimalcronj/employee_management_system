@@ -84,11 +84,11 @@ function registration()
 	if(isEmptyFields("registration"))
 		return false;
 
-	var user_id=document.getElementById("registration-user_id").value;
-	var name=document.getElementById("registration-name").value;
-	var doj=document.getElementById("registration-doj").value;
-	var remark=document.getElementById("registration-remark").value;
-	var password=document.getElementById("registration-password").value;
+	user_id=document.getElementById("registration-user_id").value;
+	name=document.getElementById("registration-name").value;
+	doj=document.getElementById("registration-doj").value;
+	remark=document.getElementById("registration-remark").value;
+password=document.getElementById("registration-password").value;
 	
 	if(isExist(user_id,JSON.stringify(empauth)) || isExist(user_id,JSON.stringify(hrauth)))
 	{
@@ -100,7 +100,8 @@ function registration()
 	document.getElementById("registration-doj").value=CONFIG.EMPTY_STRING;
 	document.getElementById("registration-remark").value=CONFIG.EMPTY_STRING;
 	document.getElementById("registration-password").value=CONFIG.EMPTY_STRING;
-
+	console.log(user);
+	//insertIntoDatabase(user,empauth);
 	empauth[empauth.length]={name:name,user_id:user_id,doj:doj,remark:remark,password:password};
 	localStorage.setItem(CONFIG.EMP_AUTH,JSON.stringify(empauth));
 	alert(name+" with userid "+user_id+" registered successfully..." );
@@ -109,6 +110,7 @@ function registration()
 
 	return false;
 }
+
 
 function viewRegistrationForm()
 {
@@ -340,7 +342,7 @@ function isValueValid(value,valueType)
 	switch(valueType)
 	{
 	case 'name':
-		if(matches("[a-z]{3,}",value,'i') && !matches("[0-9]",value) && !matches("[' ']{2,}",value) && )
+		if(matches("[a-z]{3,}",value,'i') && !matches("[0-9]",value) && !matches("[' ']{2,}",value))
 			return true;
 		return false;
 	
@@ -353,6 +355,9 @@ function isValueValid(value,valueType)
 	
 
 	case 'userid':
+		if(!matches("[\\s]",value,'i'))
+			return true;
+		return false;
 	
 	}
 }
